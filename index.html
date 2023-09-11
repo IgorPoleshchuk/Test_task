@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="css/style.css">
+        <title>Test task</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <div class="pentagon">
+                    <img class="pentagon__image" src="img/img-1.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="pentagon">
+                    <img class="pentagon__image" src="img/img-2.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="pentagon">
+                    <img class="pentagon__image" src="img/img-3.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="pentagon">
+                    <img class="pentagon__image" src="img/img-4.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="pentagon">
+                    <img class="pentagon__image" src="img/img-5.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="pentagon">
+                    <img class="pentagon__image" src="img/img-6.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="pentagon">
+                    <img class="pentagon__image" src="img/img-7.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="pentagon">
+                    <img class="pentagon__image" src="img/img-8.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <button class="button">I want to swap this</button>
+    </body>
+    <script>
+        let parent = document.querySelector('.container');
+        document.querySelector('.button').addEventListener('click', _ => {
+            let figures = document.querySelectorAll(".box");
+            let shuffle = function(arr) {
+                for (let i = arr.length - 1; i > 0; i--) {
+                    let tmp = arr[i];
+                    let rnd = Math.floor(Math.random() * (i + 1));
+                    arr[i] = arr[rnd];
+                    arr[rnd] = tmp;
+                }
+                return arr;
+            }
+            parent.append(...shuffle(Array.from(figures)));
+        })
+    </script>
+</html>
